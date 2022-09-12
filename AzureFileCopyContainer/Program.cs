@@ -28,8 +28,8 @@ namespace AzureFileCopyContainer
             BlobServiceClient client = new BlobServiceClient(connection);
 
 
-            BlobContainerClient sourceBlobContainer = client.GetBlobContainerClient("telemetry");
-            BlobContainerClient destBlobContainer = client.GetBlobContainerClient("telemetry-archive");
+            BlobContainerClient sourceBlobContainer = client.GetBlobContainerClient("<SourceContainerName>"); // Replace the tag <SourceContainerName> with the name of the source container
+            BlobContainerClient destBlobContainer = client.GetBlobContainerClient("<DestinationContainerName>"); // Replace the tag <DestinationContainerName> with the name of the destination container
 
             // Iterate through the blobs in a container
             List<BlobItem> segment = sourceBlobContainer.GetBlobs().ToList();
